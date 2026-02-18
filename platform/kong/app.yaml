@@ -7,6 +7,7 @@ spec:
   project: default
 
   sources:
+    # 1️⃣ Helm Chart
     - repoURL: https://charts.konghq.com
       chart: kong
       targetRevision: 2.47.0
@@ -14,9 +15,15 @@ spec:
         valueFiles:
           - $values/platform/kong/values.yaml
 
+    # 2️⃣ Repo para values reference
     - repoURL: https://github.com/Marx1302/gitops-marx-project
       targetRevision: main
       ref: values
+
+    # 3️⃣ Aplicar manifests da pasta
+    - repoURL: https://github.com/Marx1302/gitops-marx-project
+      targetRevision: main
+      path: platform/kong
 
   destination:
     server: https://kubernetes.default.svc
