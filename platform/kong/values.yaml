@@ -1,0 +1,15 @@
+ingressController:
+  enabled: true
+  installCRDs: true
+
+proxy:
+  type: NodePort
+  http:
+    enabled: true
+    nodePort: 30080
+  tls:
+    enabled: true
+    nodePort: 30443
+
+env:
+  database: "off"
