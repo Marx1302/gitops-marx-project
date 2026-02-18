@@ -5,16 +5,23 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: https://charts.konghq.com
-    chart: kong
-    targetRevision: 2.47.0
-    helm:
-      valueFiles:
-        - values.yaml
+
+  sources:
+    - repoURL: https://charts.konghq.com
+      chart: kong
+      targetRevision: 2.47.0
+      helm:
+        valueFiles:
+          - $values/platform/kong/values.yaml
+
+    - repoURL: https://github.com/Marx1302/gitops-marx-project
+      targetRevision: main
+      ref: values
+
   destination:
     server: https://kubernetes.default.svc
     namespace: kong
+
   syncPolicy:
     automated:
       selfHeal: true
