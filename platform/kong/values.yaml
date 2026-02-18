@@ -1,6 +1,5 @@
 ingressController:
-  enabled: true
-  installCRDs: true
+  enabled: false
 
 proxy:
   type: LoadBalancer
