@@ -18,6 +18,13 @@ admin:
 
 manager:
   enabled: true
+  http:
+    enabled: true
+  tls:
+    enabled: true
 
 env:
   database: "off"
+  admin_listen: "0.0.0.0:8001"
+  admin_gui_url: "https://172.16.0.101:30794"
+  admin_gui_api_url: "http://172.16.0.101:32001"
