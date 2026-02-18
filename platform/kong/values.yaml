@@ -22,3 +22,17 @@ manager:
     enabled: true
   tls:
     enabled: true
+
+env:
+  database: "off"
+  KONG_DECLARATIVE_CONFIG: /kong/declarative/kong.yaml
+
+extraVolumes:
+  - name: kong-dbless-config
+    configMap:
+      name: kong-dbless-config
+
+extraVolumeMounts:
+  - name: kong-dbless-config
+    mountPath: /kong/declarative
+    readOnly: true
