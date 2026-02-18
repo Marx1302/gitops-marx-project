@@ -3,7 +3,7 @@ _transform: true
 
 services:
   - name: nginx-service
-    url: http://nginx.default.svc.cluster.local
+    url: http://nginx.default.svc.cluster.local:80
     routes:
       - name: nginx-route
         paths:
