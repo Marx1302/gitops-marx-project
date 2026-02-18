@@ -3,13 +3,21 @@ ingressController:
   installCRDs: true
 
 proxy:
+  type: LoadBalancer
+  http:
+    enabled: true
+  tls:
+    enabled: true
+
+admin:
+  enabled: true
   type: NodePort
   http:
     enabled: true
-    nodePort: 30080
-  tls:
-    enabled: true
-    nodePort: 30443
+    nodePort: 32001
+
+manager:
+  enabled: true
 
 env:
   database: "off"
