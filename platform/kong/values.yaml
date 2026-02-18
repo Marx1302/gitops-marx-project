@@ -22,3 +22,11 @@ manager:
     enabled: true
   tls:
     enabled: true
+env:
+  database: "off"
+  declarative_config: /kong/declarative/kong.yaml
+
+dblessConfig:
+  configMap: kong-dbless-config
+  mountPath: /kong/declarative
+  subPath: kong.yaml
